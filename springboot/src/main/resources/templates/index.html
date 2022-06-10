@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script th:inline="javascript" src="js/index.js"></script>
+</head>
+<body>
+    <!-- <input id="push" type="button" value="push" /> -->
+    <table border="1">
+        <tr>
+            <th>编号</th>
+            <th>用户名</th>
+            <th>地址</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="user : ${users}">
+        <!-- <tr> -->
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.address}"></td>
+            <td>
+                <input type="button" value="修改" class="update" th:onclick="app.update([[${user.id}]]);" />
+                <input type="button" value="删除" class="delete" th:onclick="app.delete([[${user.id}]]);" />
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="新增" id="add" />
+</body>
+
+</html>

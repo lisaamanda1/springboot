@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <form method="post" action="/submit">
+        <input type="hidden" name="id" th:value="${user?.id ?: ''}" />
+        用户名：<input type="text" name="name" th:value="${user?.name ?: ''}" />
+        <br />
+        地址：<input type="radio" name="address" value="1" th:checked="${user?.address == '1' ?: ''}" />中国
+        <input type="radio" name="address" value="2" th:checked="${user?.address == '2' ?: ''}" />日本
+        <br />
+        <input type="submit" value="提交" />
+        <input type="button" value="返回" onclick="location.href='/list'" />
+    </form>
+</body>
+</html>
