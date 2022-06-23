@@ -3,7 +3,7 @@ package com.hx.springboot.constant;
 public class Constant {
 	
 	public enum Address {
-		China("中国", "1"), Japan("日本", "3");
+		China("中国", "1"), Japan("日本", "2");
 		
 		private String name;
 		private String code;
